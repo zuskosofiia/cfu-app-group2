@@ -1,19 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
+
+
+import UcuScreen from "./screens/UcuScreen.js";
+import ProfileScreen from "./screens/ProfileScreen.js";
+import LoginScreen from "./screens/LoginScreen.js";
+// import SettingsScreen from "./screens/SettingsScreen.js";
+// import DetailsScreen from "./screens/DetailsScreen.js";
+// import SecondScreen from "./screens/SecondScreen.js";
+
+
+
+const Stack = createNativeStackNavigator();
+const Tab =createBottomTabNavigator();
+
+//Tabs we want to show aftetr a login
+function MainTabs() {
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name='Home' component={HomeScreen}/>
+      <Tab.Screen name='Add' component={AddnewScreen} />
+      <Tab.Screen name='Profile' component={ProfileScreen}/>
       
-    </View>
-  );
+    </Tab.Navigator>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+ return (
+   <NavigationContainer>
+     <Stack.Navigator initialRouteName="Login">
+      <Stack.Screen name="Login" component={LoginScreen} />
+       {/* <Stack.Screen name="MainTabs" component={MainTabs} /> */}
+       {/* <Stack.Screen name="Second" component={SecondScreen}/> */}
+       <Stack.Screen name="Profile" component={ProfileScreen}/>
+      
+     </Stack.Navigator>
+   </NavigationContainer>
+ );
+}

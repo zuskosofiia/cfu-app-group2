@@ -14,7 +14,7 @@ import LoginScreen from "./screens/LoginScreen.js";
 
 
 const Stack = createNativeStackNavigator();
-const Tab =createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 //Tabs we want to show aftetr a login
 function MainTabs() {
@@ -23,6 +23,7 @@ function MainTabs() {
       <Tab.Screen name='Home' component={HomeScreen}/>
       <Tab.Screen name='Add' component={AddnewScreen} />
       <Tab.Screen name='Profile' component={ProfileScreen}/>
+      <Tab.Screen name='UcuScreen' component={UcuScreen}/>
       
     </Tab.Navigator>
   )
@@ -31,11 +32,12 @@ function MainTabs() {
 export default function App() {
  return (
    <NavigationContainer>
-     <Stack.Navigator initialRouteName="Login">
+     <Stack.Navigator initialRouteName="UcuScreen">
       <Stack.Screen name="Login" component={LoginScreen} />
        {/* <Stack.Screen name="MainTabs" component={MainTabs} /> */}
        {/* <Stack.Screen name="Second" component={SecondScreen}/> */}
        <Stack.Screen name="Profile" component={ProfileScreen}/>
+       <Stack.Screen name="UcuScreen" component={UcuScreen}/>
       
      </Stack.Navigator>
    </NavigationContainer>

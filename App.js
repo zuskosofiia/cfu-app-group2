@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import UcuScreen from "./screens/UcuScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
+import HomeScreen from "./screens/HomeScreen.js";
 // import SettingsScreen from "./screens/SettingsScreen.js";
 // import DetailsScreen from "./screens/DetailsScreen.js";
 // import SecondScreen from "./screens/SecondScreen.js";
@@ -31,8 +32,9 @@ function MainTabs() {
 export default function App() {
  return (
    <NavigationContainer>
-     <Stack.Navigator initialRouteName="Login">
+     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
        {/* <Stack.Screen name="MainTabs" component={MainTabs} /> */}
        {/* <Stack.Screen name="Second" component={SecondScreen}/> */}
        <Stack.Screen name="Profile" component={ProfileScreen}/>

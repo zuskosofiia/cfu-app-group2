@@ -7,9 +7,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import UcuScreen from "./screens/UcuScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
-// import SettingsScreen from "./screens/SettingsScreen.js";
-// import DetailsScreen from "./screens/DetailsScreen.js";
-// import SecondScreen from "./screens/SecondScreen.js";
+import InformationScreen from "./screens/InformationScreen.js";
+import SettingsScreen from "./screens/SettingsScreen.js";
+import StudentsucuScreen from "./screens/StudentsucuScreen.js";
+import ContentSCreen from "./screens/ContentucuScreen.js";
+import FeedbackScreen from "./screens/FeedbackScreen.js";
+
+
 
 
 
@@ -22,7 +26,7 @@ function MainTabs() {
     <Tab.Navigator>
       <Tab.Screen name='Home' component={HomeScreen}/>
       <Tab.Screen name='Add' component={AddnewScreen} />
-      <Tab.Screen name='Profile' component={ProfileScreen}/>
+      <Tab.Screen name='Profile' component={Profile}/>
       <Tab.Screen name='UcuScreen' component={UcuScreen}/>
       
     </Tab.Navigator>
@@ -38,6 +42,11 @@ export default function App() {
        {/* <Stack.Screen name="Second" component={SecondScreen}/> */}
        <Stack.Screen name="Profile" component={ProfileScreen}/>
        <Stack.Screen name="UcuScreen" component={UcuScreen}/>
+       <Stack.Screen name="Information" component={InformationScreen}/>
+       <Stack.Screen name="Studentsucu" component={StudentsucuScreen}/>
+       <Stack.Screen name="Content" component={ContentSCreen}/>
+       <Stack.Screen name="Feedback" component={FeedbackScreen}/>
+
       
      </Stack.Navigator>
    </NavigationContainer>

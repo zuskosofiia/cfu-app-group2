@@ -14,23 +14,24 @@ export default function UcuScreen () {
                   Український Католицький Університет 
               </Text>
               <Image style={styles.photoucu} source={require('../assets/ucu.png')}/>
-              <TouchableOpacity onPress ={() => navigation.navigate("")} style={styles.botton1}>
+              {/* <Image style={styles.logoucu} source={require('../assets/logoucu.png')}/> */}
+              <TouchableOpacity onPress ={() => navigation.navigate("Information")} style={styles.botton1}>
                 <Image source={require('../assets/book-icon.png')}/>
                 <Text style={styles.textbotton}> Information </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress ={() => navigation.navigate("")} style={styles.botton1}>
+              <TouchableOpacity onPress ={() => navigation.navigate("Studentsucu")} style={styles.botton1}>
                 <Image source={require('../assets/cap-icon.png')}/>
                 <Text style={styles.textbotton}> Students </Text>
               </TouchableOpacity>
 
 
-              <TouchableOpacity onPress ={() => navigation.navigate("")} style={styles.botton1}>
+              <TouchableOpacity onPress ={() => navigation.navigate("Content")} style={styles.botton1}>
                 <Image source={require('../assets/camera-icon.png')}/>
                 <Text style={styles.textbotton}> Content </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress ={() => navigation.navigate("")} style={styles.botton1}>
+              <TouchableOpacity onPress ={() => navigation.navigate("Feedback")} style={styles.botton1}>
                 <Image source={require('../assets/message-icon.png')}/>
                 <Text style={styles.textbotton}> Feedback </Text>
               </TouchableOpacity>
@@ -89,9 +90,16 @@ const styles = StyleSheet.create({
 
 
   },
-  bookicon: {
-    
+  // logoucu: {
+  //   margin: 40,
+  //   height: 130,
+  //   width: 230,
+  //   // sizeMode: 'contain',
+  //   borderRadius: 20,
+  //   borderColor: 'black',
+  //   borderWidth: 3,
+  //   flexDirection: 'row',
 
-  },
+  // },
 
 });

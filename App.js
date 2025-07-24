@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import UcuScreen from "./screens/UcuScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
+import ContentucuScreen from "./screens/ContentucuScreen.js";
 // import SettingsScreen from "./screens/SettingsScreen.js";
 // import DetailsScreen from "./screens/DetailsScreen.js";
 // import SecondScreen from "./screens/SecondScreen.js";
@@ -23,6 +24,7 @@ function MainTabs() {
       <Tab.Screen name='Home' component={HomeScreen}/>
       <Tab.Screen name='Add' component={AddnewScreen} />
       <Tab.Screen name='Profile' component={ProfileScreen}/>
+      <Tab.Screen name='ContentucuScreen' component={ContentucuScreen}/>
       
     </Tab.Navigator>
   )
@@ -31,11 +33,12 @@ function MainTabs() {
 export default function App() {
  return (
    <NavigationContainer>
-     <Stack.Navigator initialRouteName="Login">
+     <Stack.Navigator initialRouteName="Contentucu">
       <Stack.Screen name="Login" component={LoginScreen} />
        {/* <Stack.Screen name="MainTabs" component={MainTabs} /> */}
        {/* <Stack.Screen name="Second" component={SecondScreen}/> */}
        <Stack.Screen name="Profile" component={ProfileScreen}/>
+       <Stack.Screen name="Contentucu" component={ContentucuScreen}/>
       
      </Stack.Navigator>
    </NavigationContainer>

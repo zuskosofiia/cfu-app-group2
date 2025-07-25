@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, Button } from 'react-native';
 
 export default function UcuScreen () {
 
@@ -11,10 +11,12 @@ export default function UcuScreen () {
           <ScrollView style={styles.scrollcontainer}>
               {/* <StatusBar style="auto" /> */}
               <Text style={styles.paragraph}>
-                  Український Католицький Університет 
+                  Ukrainian Catholic University 
               </Text>
-              <Image style={styles.photoucu} source={require('../assets/ucu.png')}/>
-              {/* <Image style={styles.logoucu} source={require('../assets/logoucu.png')}/> */}
+              <View style={styles.imageContainer}>
+                <Image style={styles.photoucu} source={require('../assets/ucu.png')}/>
+                <Image style={styles.logoucu} source={require('../assets/logoucu.png')}/>
+              </View>
               <TouchableOpacity onPress ={() => navigation.navigate("Information")} style={styles.botton1}>
                 <Image source={require('../assets/book-icon.png')}/>
                 <Text style={styles.textbotton}> Information </Text>
@@ -45,61 +47,70 @@ export default function UcuScreen () {
 const styles = StyleSheet.create({
   scrollcontainer: {
     flex: 1,
-    // backgroundColor: '#F6F1DE',
+    backgroundColor: '#fff',
+    height: '100%',
+  
     // alignItems: 'center',
     // justifyContent: 'center',
   },
   paragraph: {
     color: 'black',
-    fontWeight: 'Steclo',
+    fontSize: 22,
+    fontWeight: 'bold',
     alignSelf: 'center',
     margin: 15,
+    padding: '5%',
   },
   photoucu: {
     margin: 15,
-    height: 130,
-    width: 130,
+    height: 150,
+    width: 150,
     // sizeMode: 'contain',
     borderRadius: 20,
-    borderColor: 'black',
-    borderWidth: 3,
+    // borderColor: 'black',
+    // borderWidth: 3,
 
 
 
   },
   botton1: {
-    // height: '40%',
-    paddingVertical: 10,
+    paddingVertical: 5,
     width: '90%',
     backgroundColor: '#4B9F3A',
-    margin: 20,
+    marginVertical: 10,
     borderRadius: 20,
     alignItems: "center",
-    // justifyContent: "center",
+    alignSelf: 'center',
+    flesDirection: 'row',
+    justifyContent: "fles-start",
+    justifyContent: 'center',
     flexDirection: "row",
-    paddingLeft: 35,
-    gap: 10,
+    paddingHorizontal: 20,
+    gap: 12,
 
   },
   textbotton: {
     color: 'white',
-    // fontWeight: 'Steclo',
     alignSelf: 'center',
-    // margin: 15,
-    fontSize: 36, 
+    fontSize: 22, 
 
 
   },
-  // logoucu: {
-  //   margin: 40,
-  //   height: 130,
-  //   width: 230,
-  //   // sizeMode: 'contain',
-  //   borderRadius: 20,
-  //   borderColor: 'black',
-  //   borderWidth: 3,
-  //   flexDirection: 'row',
+  logoucu: {
+    margin: 15,
+    height: 150,
+    width: 150,
+    resizeMode: 'cover',
+    borderRadius: 20,
+    // borderColor: 'black',
+    // borderWidth: 3,
+    flexDirection: 'row',
+    // margin:10,
 
-  // },
+  },
+
+  imageContainer: {
+    flexDirection: 'row'
+  }
 
 });

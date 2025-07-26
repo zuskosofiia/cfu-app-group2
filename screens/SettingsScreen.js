@@ -1,7 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, Switch, SafeAreaView, useColorScheme } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import HelpScreen from './HelpScreen';
-import PrivacyScreen from './PrivacyScreen';
 import {useState} from 'react';
 
 export default function SettingsScreen({ navigation }) {

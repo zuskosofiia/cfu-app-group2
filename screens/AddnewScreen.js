@@ -1,75 +1,108 @@
 import { useNavigation } from '@react-navigation/native';
-import {View, Text, StyleSheet, TouchableOpacity, Image,TextInput} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
 import { useState } from 'react';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 
-export default function AddnewScreen() {
-    const [feedback, setfeedback] = useState("");
-    const navigation =useNavigation();
-  return(
+const photoURI = [
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/ucu.png"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+]
+
+
+export default function AddPostScreen() {
+  const [imgPath, setImgPath] = useState(require('../assets/graybackground.webp'))
+
+  return (
     <View style={styles.container}>
-      <Image 
-        style={styles.logoimage}
-        source={require('../assets/logo-image.png')}
-    />
-    <Text style={styles.addnew}>Add new</Text>
-    <TouchableOpacity>
-      <MaterialIcons name="add-a-photo" size={90} color="black" marginLeft='70%' marginTop='10%'   onPress ={() => navigation.navigate("AddpostScreen")}  />
-    </TouchableOpacity>
-    <TextInput
-       style={styles.feedbackinput}
-       value={feedback}
-       multiline={true}
-       onChangeText={setfeedback}
-       placeholder={"Enter your feedback"}
-    />
-    <TouchableOpacity style={styles.postbut}>
-        <Text style={styles.postbutton}>Post</Text>
-    </TouchableOpacity>
-    </View> 
-  )
+      <Image style={styles.logo} source={require('../assets/logo-image.png')} />
+
+      <View style={styles.skeletonInput}>
+        <Text style={styles.text}>Add post</Text>
+        <Image style={styles.grayimage} source={imgPath} />
+
+      </View>
+      <Text style={styles.recents}>Recents</Text>
+
+
+      <FlatList
+        data={photoURI}
+        numColumns={3}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => setImgPath(item)}>
+            <Image source={item} style={styles.image} />
+          </TouchableOpacity>
+        )}
+      />
+
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container:{
+  container: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '100%',
+    // paddingTop: 3,
+    backgroundColor: '#fff',
     backgroundColor:'#fff',
-    marginTop: '-6%',
-    height: '106%',
-    },
-    postbutton:{
-      backgroundColor:'#4B9F3A' ,
-      height:50,
-      width:150,
-      borderRadius:30,  
-      textAlign:'center',
-      padding:'15',
-      marginLeft:'60%',
-      marginTop:'10%',
-    },
-    logoimage:{
-   resizeMode:"contain",
-   marginLeft:'80%',
-   marginTop:'3%',
-   height: 75,
-   width: 75,
-   },
-   addnew:{
-   textAlign:'center',
-   fontSize:30,
-   },
-   feedbackinput:{
-    borderRadius:10,
-    marginTop:'10%',
-    marginLeft:'13%',
-    backgroundColor:'lightgray',
-    width:300,
-    height:200,
-    alignItems: "center",
-    textAlignVertical:"top"
-   },
-   postbut: {
-    marginRight: "9%",
-   },
-  }
-)
+    paddingTop: "8%",
+
+  },
+  recents:{
+    alignSelf: 'flex-start',
+    marginLeft: 20, 
+    marginBottom: 10,
+    fontSize: 16,
+    fontweight: '200',
+
+  },
+  logo: {
+    width: 75,
+    height: 75,
+    resizeMode: 'contain',
+    marginBottom: 80,
+    marginLeft:300,
+  },
+  skeletonInput: {
+    width: '90%',
+    alignItems: 'center',
+    marginBottom: 20,
+    position: 'relative',
+  },
+  text: {
+    marginTop: -60,
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  grayimage: {
+    width: '100%',
+    height: 150,
+    borderRadius: 8,
+    resizeMode: 'cover',
+  },
+  image: {
+    width: 100,
+    height: 100,
+    margin: 5,
+    borderRadius: 8,
+    resizeMode: 'cover',
+  },
+});

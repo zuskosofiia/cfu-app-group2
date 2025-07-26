@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, Touchab
 import { useState } from 'react';
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
+import { Entypo } from '@expo/vector-icons';
 
 const photosURI = [
     require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
@@ -13,8 +14,6 @@ const photosURI = [
 ]
 
 export function PhotoGrid({ photos }) {
-   
-    
     return (
         <FlatList data={photos}
             numColumns={3}
@@ -40,14 +39,11 @@ export default function ProfileScreen() {
   return (
     <ScrollView>
     <View style={styles.container}>
-        <TouchableOpacity onPress={()=> 
-            navigation.navigate("SettingsScreen")}> 
-            <Ionicons 
-            name="settings-sharp" 
-            size={30} 
-            color="#671414" 
-            style={{ marginLeft: '73%', marginTop: '2%' }} 
-            />
+         <View style={styles.containerimage}>
+            <Image style={styles.logo} source={require('../assets/logo-image.png')} />
+         </View>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Entypo name="arrow-long-left"  color="black" top="-10" size='30' marginRight='300'/>
         </TouchableOpacity>
       <Image style={{ borderColor: '#671414', borderWidth: 5, width: 120, height: 120, borderRadius: 60, margin: 20 }} source={require("../assets/profile.jpg")} />
       <Text style={styles.text1}> Name </Text>
@@ -59,7 +55,6 @@ export default function ProfileScreen() {
                 {isFollowing ? 'Unfollow' : 'Follow'}
             </Text>
         </TouchableOpacity>
-        {/* <Text style={{ backgroundColor: "#317B22", fontSize: 13, padding: 5, fontFamily: "Inter", borderRadius: 20, marginLeft: 10 }}> Follow </Text> */}
         
         <Text style={styles.text}> Followers </Text>
         <Text style={styles.text}> Posts </Text>
@@ -69,7 +64,6 @@ export default function ProfileScreen() {
         <Text style={styles.bioContainer}> bio</Text>
       </View>
 
-      <TextInput style={styles.textInput} value={myText} onChangeText={setMyText} placeholder={"Share your bio here..."} />
       <View style={styles.imagesContainer}>
           <PhotoGrid photos={photosURI}></PhotoGrid>
       </View>
@@ -130,5 +124,16 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     minWidth: 70,
-  }
-});
+  },
+   logo: {
+    width: 75,
+    height: 75,
+    resizeMode: 'contain',
+    position: 'absolute',
+    top: -40,
+    right: -190, 
+    // marginBottom: 80,
+    // marginLeft:300,
+    //хєрня то всьо повна!!!!!!!
+  },
+}); 

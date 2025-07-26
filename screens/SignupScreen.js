@@ -40,6 +40,7 @@ export default function LoginScreen() {
         style={styles.emailinput}
         value={password}
         onChangeText={setPassword}
+        secureTextEntry
         placeholder={"Password"}
       />
       
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         // marginTop: '10%',
         height: '100%',
+        paddingTop:'10%',
     },
     container:{
     // backgroundColor:'#F6F1DE',
@@ -84,16 +86,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
    buttonlogin:{
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor:'#4B9F3A' ,
     height:50,
     width:200,
-    padding: 10,
     borderRadius:30,  
-
-
-    alignContent: 'center',
     justifyContent:'center',
 
  },
@@ -101,7 +98,9 @@ const styles = StyleSheet.create({
   signemail:{
     flexDirection:'column',
     alignItems: "center",
-    padding:100, 
+    justifyContent: 'center',
+    paddingTop: 100,
+    paddingBottom: 160,
   },
 
   signup: {
@@ -109,15 +108,10 @@ const styles = StyleSheet.create({
      color: 'white',
      padding: 10,
      textAlign: 'center',
-
-    
-    
-
-
   },
 
   buttonsignup:{
-    backgroundColor: '#6e9f3aff',
+    backgroundColor: '#4B9F3A',
     height: 50,
     weight: 50,
     marginRight:20,
@@ -147,9 +141,7 @@ const styles = StyleSheet.create({
 
  signtext:{
     fontWeight:'bold',
-    fontSize:22,
-    padding: 3,
-    width: 120
+    fontSize: 22,
  },
 
 })

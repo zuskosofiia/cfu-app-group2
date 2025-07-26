@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 
 
@@ -22,7 +23,7 @@ export function PhotoGrid({students}) {
     numColumns={2}
     renderItem={
       ({item}) => (
-        <TouchableOpacity  onPress ={() => navigation.navigate("Profile")} >
+        <TouchableOpacity  onPress ={() => navigation.navigate("StudentProfiles")} >
             <View style={styles.studentBox}>
                 <Image source={item} style={styles.image} />
                 <View style={styles.studentInfo}>
@@ -46,6 +47,9 @@ export default function StudentsScreen() {
         <View style={styles.container}>
             <Text style={styles.maintext}> Students </Text>
         </View>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Entypo name="arrow-long-left"  color="black" top="-10" size='30' paddingLeft='15'/>
+        </TouchableOpacity>
         <View style={styles.imagesContainer}>
                 <PhotoGrid students={photosURI}></PhotoGrid>
         </View>

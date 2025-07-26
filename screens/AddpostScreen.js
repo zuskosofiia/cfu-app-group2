@@ -29,12 +29,16 @@ export default function AddPostScreen() {
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require('../assets/logo-image.png')} />
-
+    <TouchableOpacity style={styles.postbut}>
+      <Text style={styles.textbut}>Post</Text>
+    </TouchableOpacity>
       <View style={styles.skeletonInput}>
         <Text style={styles.text}>Add post</Text>
         <Image style={styles.grayimage} source={imgPath} />
-
       </View>
+      {/* <TouchableOpacity style={styles.sendbut} onPress={sendFeedback}>
+        <Text style={styles.textbut}>Send</Text>
+      </TouchableOpacity> */}
       <Text style={styles.recents}>Recents</Text>
 
 
@@ -56,11 +60,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     width: '100%',
-    // paddingTop: 3,
+    paddingHorizontal: 20,
     backgroundColor: '#fff',
-    backgroundColor:'#fff',
+    // backgroundColor:'#fff',
     marginTop: -8, 
   },
   recents:{
@@ -76,13 +80,15 @@ const styles = StyleSheet.create({
     height: 75,
     resizeMode: 'contain',
     marginBottom: 80,
-    marginLeft:300,
+    alignSelf: 'flex-end',
+    // marginLeft:300,
   },
   skeletonInput: {
     width: '90%',
     alignItems: 'center',
     marginBottom: 20,
     position: 'relative',
+    
   },
   text: {
     marginTop: -60,
@@ -104,4 +110,24 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     resizeMode: 'cover',
   },
+  postbut: {
+    alignItems: 'center',
+    backgroundColor:'#4B9F3A' ,
+    height:50,
+    width:100,
+    borderRadius:30,  
+    justifyContent:'center',
+    alignSelf: 'flex-end',
+    marginVertical: 10,
+    // marginLeft: 0,
+    // borderWidth: 17,
+    // borderColor: 'red',
+    // marginLeft: '70%',
+
+  },
+  textbut: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+    },
 });

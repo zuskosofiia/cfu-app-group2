@@ -35,8 +35,10 @@ export default function LoginScreen() {
                 <TextInput
                     style={styles.emailinput}
                     value={password}
-                    onChangeText={setPassword}
+                    onChangeText={setPassword} 
+                    secureTextEntry
                     placeholder={"Password"}
+
                 />
             </View>
             <View style={styles.signupbut}>
@@ -53,7 +55,9 @@ const styles = StyleSheet.create({
     mainContainer: {
         backgroundColor: '#fff',
         height: '100%',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingTop: '10%',
+
     },
     container: {
         flexDirection: 'row',
@@ -103,8 +107,6 @@ const styles = StyleSheet.create({
     signup: {
         padding: 10,
         alignItems: 'center',
-
-
     },
 
     buttonsignup: {
@@ -114,7 +116,8 @@ const styles = StyleSheet.create({
         marginRight: 15,
         borderRadius: 30,
         marginTop: 15,
-        padding: 10,
+        justifyContent: 'center',
+        alignContent: 'center',
     },
 
     signup: {

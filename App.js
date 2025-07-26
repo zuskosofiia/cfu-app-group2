@@ -19,23 +19,11 @@ import ChatsScreen from "./screens/ChatsScreen.js";
 import HelpScreen from "./screens/HelpScreen.js";
 import PrivacyScreen from "./screens/PrivacyScreen.js";
 import AddpostScreen from "./screens/AddpostScreen.js";
+import StudentProfiles from "./screens/StudentProfiles.js";
 
 
 const Stack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
-
-//Tabs we want to show aftetr a login
-// function MainTabs() {
-//   return(
-//     <Tab.Navigator screenOptions={{headerShown: false}}>
-//       <Tab.Screen name='Home' component={HomeScreen}/>
-//       <Tab.Screen name='AddnewScreen' component={AddnewScreen} />
-//       <Tab.Screen name='Profile' component={ProfileScreen}/>
-      
-      
-//     </Tab.Navigator>
-//   )
-// }
 
 function MainTabs() {
   return (
@@ -59,9 +47,9 @@ function MainTabs() {
         tabBarActiveBackgroundColor: '#84d191ff',
         tabBarInactiveBackgroundColor: '#85af7cff',
       })}>
-        <Tabs.Screen name="Home" component={HomeScreen} />
-        <Tabs.Screen name="AddnewScreen" component={AddnewScreen} />
-        <Tabs.Screen name="Profile" component={ProfileScreen} />
+        <Tabs.Screen name="Home" component={HomeScreen} options={{ tabBarLabel: 'Home'}} />
+        <Tabs.Screen name="AddnewScreen" component={AddnewScreen}  options={{ tabBarLabel: 'Add new'}}/>
+        <Tabs.Screen name="Profile" component={ProfileScreen} options={{ tabBarLabel: 'Profile'}} />
       </Tabs.Navigator>
   );
 }
@@ -70,7 +58,7 @@ function MainTabs() {
 export default function App() {
  return (
    <NavigationContainer>
-     <Stack.Navigator initialRouteName="Login" >
+     <Stack.Navigator initialRouteName="Login" screenOptions={({ route }) => ({ headerShown: false })} >
       <Stack.Screen name="Login" component={LoginScreen} />
        <Stack.Screen name="MainTabs" component={MainTabs} />
        <Stack.Screen name="Profile" component={ProfileScreen}/>
@@ -88,6 +76,7 @@ export default function App() {
        <Stack.Screen name="HelpScreen" component={HelpScreen}/>
        <Stack.Screen name="PrivacyScreen" component={PrivacyScreen}/> 
        <Stack.Screen name="AddpostScreen" component={AddpostScreen}/> 
+       <Stack.Screen name="StudentProfiles" component={StudentProfiles}/> 
                           
 
      </Stack.Navigator>

@@ -1,30 +1,33 @@
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, FlatList, Alert  } from 'react-native';
 import { useState } from 'react';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 
 const photoURI = [
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/ucu.png"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/photouni1.png"),
+  require("../assets/photouni2.png"),
+  require("../assets/photouni3.png"),
+  require("../assets/photouni4.png"),
+  require("../assets/photouni5.png"),
+  require("../assets/photouni6.png"),
+  require("../assets/photouni7.png"),
+  require("../assets/photouni8.png"),
+  require("../assets/photouni9.png"),
+  require("../assets/photouni10.png"),
+  require("../assets/photouni11.png"),
+  require("../assets/photouni12.png"),
+  require("../assets/photouni13.png"),
+  require("../assets/photouni14.png"),
+  require("../assets/photouni15.png"),
 ]
 
 
 export default function AddPostScreen() {
-  const [imgPath, setImgPath] = useState(require('../assets/graybackground.webp'))
+  const [imgPath, setImgPath] = useState(require('../assets/photouni1.png'));
+  const handlePress = () => {
+    Alert.alert('Oops! Now it does not work, but in future, I believe, it will work!')
+  }
 
   return (
     <View style={styles.container}>
@@ -33,6 +36,9 @@ export default function AddPostScreen() {
       <View style={styles.skeletonInput}>
         <Text style={styles.text}>Add post</Text>
         <Image style={styles.grayimage} source={imgPath} />
+        <TouchableOpacity style={styles.postbut} onPress = {handlePress} >
+          <Text style={styles.textbut}>Post</Text>
+        </TouchableOpacity>
 
       </View>
       <Text style={styles.recents}>Recents</Text>
@@ -81,12 +87,13 @@ const styles = StyleSheet.create({
   },
   skeletonInput: {
     width: '90%',
+    height: '20%',
     alignItems: 'center',
     marginBottom: 20,
-    position: 'relative',
+    // position: 'relative',
   },
   text: {
-    marginTop: -60,
+    marginTop: -120,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
@@ -94,7 +101,7 @@ const styles = StyleSheet.create({
   },
   grayimage: {
     width: '100%',
-    height: 150,
+    height: 200,
     borderRadius: 8,
     resizeMode: 'cover',
   },
@@ -104,5 +111,22 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 8,
     resizeMode: 'cover',
+  },
+   postbut: {
+    alignItems: 'center',
+    backgroundColor:'#4B9F3A' ,
+    height:50,
+    width:100,
+    borderRadius:30,  
+    justifyContent:'center',
+    alignSelf: 'flex-end',
+    marginVertical: 10,
+    
+
+  },
+  textbut: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });

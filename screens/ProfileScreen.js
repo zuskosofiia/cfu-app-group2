@@ -4,12 +4,21 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 
 const photosURI = [
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/photouni1.png"),
+  require("../assets/photouni2.png"),
+  require("../assets/photouni3.png"),
+  require("../assets/photouni4.png"),
+  require("../assets/photouni5.png"),
+  require("../assets/photouni6.png"),
+  require("../assets/photouni7.png"),
+  require("../assets/photouni8.png"),
+  require("../assets/photouni9.png"),
+  require("../assets/photouni10.png"),
+  require("../assets/photouni11.png"),
+  require("../assets/photouni12.png"),
+  require("../assets/photouni13.png"),
+  require("../assets/photouni14.png"),
+  require("../assets/photouni15.png"),
 ]
 
 export function PhotoGrid({ photos }) {
@@ -50,7 +59,7 @@ export default function ProfileScreen() {
             />
         </TouchableOpacity>
       <Image style={{ borderColor: '#671414', borderWidth: 5, width: 120, height: 120, borderRadius: 60, margin: 20 }} source={require("../assets/profile.jpg")} />
-      <Text style={styles.text1}> Name </Text>
+      <Text style={styles.text1}> Denis </Text>
 
       <View style={{ flex:1, flexDirection: "row" }}>
         <TouchableOpacity onPress={toggleFollow}>
@@ -59,14 +68,15 @@ export default function ProfileScreen() {
                 {isFollowing ? 'Unfollow' : 'Follow'}
             </Text>
         </TouchableOpacity>
-        {/* <Text style={{ backgroundColor: "#317B22", fontSize: 13, padding: 5, fontFamily: "Inter", borderRadius: 20, marginLeft: 10 }}> Follow </Text> */}
         
-        <Text style={styles.text}> Followers </Text>
-        <Text style={styles.text}> Posts </Text>
+        
+        <Text style={styles.text}> Followers 150 </Text>
+        <Text style={styles.text}> Posts 15
+           </Text>
       </View>
 
       <View style={{flex: 1, flexDirection: "row"}}>
-        <Text style={styles.bioContainer}> bio</Text>
+        <Text style={styles.bioContainer}> I am student!</Text>
       </View>
 
       <TextInput style={styles.textInput} value={myText} onChangeText={setMyText} placeholder={"Share your bio here..."} />

@@ -5,26 +5,26 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 
 const photoURI = [
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/ucu.png"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/photouni1.png"),
+  require("../assets/photouni2.png"),
+  require("../assets/photouni3.png"),
+  require("../assets/photouni4.png"),
+  require("../assets/photouni5.png"),
+  require("../assets/photouni6.png"),
+  require("../assets/photouni7.png"),
+  require("../assets/photouni8.png"),
+  require("../assets/photouni9.png"),
+  require("../assets/photouni10.png"),
+  require("../assets/photouni11.png"),
+  require("../assets/photouni12.png"),
+  require("../assets/photouni13.png"),
+  require("../assets/photouni14.png"),
+  require("../assets/photouni15.png"),
 ]
 
 
 export default function AddPostScreen() {
-  const [imgPath, setImgPath] = useState(require('../assets/graybackground.webp'))
+  const [imgPath, setImgPath] = useState(require('../assets/photouni1.png'))
 
   return (
     <View style={styles.container}>
@@ -36,9 +36,6 @@ export default function AddPostScreen() {
         <Text style={styles.text}>Add post</Text>
         <Image style={styles.grayimage} source={imgPath} />
       </View>
-      {/* <TouchableOpacity style={styles.sendbut} onPress={sendFeedback}>
-        <Text style={styles.textbut}>Send</Text>
-      </TouchableOpacity> */}
       <Text style={styles.recents}>Recents</Text>
 
 
@@ -64,7 +61,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 20,
     backgroundColor: '#fff',
-    // backgroundColor:'#fff',
+   
     marginTop: -8, 
   },
   recents:{
@@ -81,7 +78,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginBottom: 80,
     alignSelf: 'flex-end',
-    // marginLeft:300,
+   
   },
   skeletonInput: {
     width: '90%',
@@ -119,10 +116,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignSelf: 'flex-end',
     marginVertical: 10,
-    // marginLeft: 0,
-    // borderWidth: 17,
-    // borderColor: 'red',
-    // marginLeft: '70%',
+    
 
   },
   textbut: {

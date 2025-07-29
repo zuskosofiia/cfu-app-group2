@@ -1,21 +1,24 @@
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity } from 'react-native';
-
+import { Entypo } from '@expo/vector-icons';
+import { StyleSheet, Text, View, Image, ScrollView, TextInput, FlatList, TouchableOpacity, } from 'react-native';
 
 
 const photosURI = [
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require ("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-  require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/photouni1.png"),
+  require("../assets/photouni2.png"),
+  require("../assets/photouni3.png"),
+  require("../assets/photouni4.png"),
+  require("../assets/photouni5.png"),
+  require("../assets/photouni6.png"),
+  require("../assets/photouni7.png"),
+  require("../assets/photouni8.png"),
+  require("../assets/photouni9.png"),
+  require("../assets/photouni10.png"),
+  require("../assets/photouni11.png"),
+  require("../assets/photouni12.png"),
+  require("../assets/photouni13.png"),
+  require("../assets/photouni14.png"),
+  require("../assets/photouni15.png"),
 ]
 
 export function PhotoGrid({photos}) {
@@ -34,10 +37,14 @@ export function PhotoGrid({photos}) {
 
  
 export default function ProfileScreen() {
+  const navigation = useNavigation();
   return (
    
         <View style={styles.container}>
                 <Image style={{resizeMode:"contain", height:75, width:75, position: 'absolute', right: 0, top: 20}} source={require("../assets/logo-image.png")} />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Entypo name="arrow-long-left"  color="black" top="30" size={30} marginRight='300'/>
+            </TouchableOpacity>
                     
                 <Text style={styles.maintext}> Content</Text>
             <View style={styles.imagesContainer}>

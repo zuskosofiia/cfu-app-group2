@@ -18,7 +18,7 @@ return(
           </View>
           <View style={styles.topBar}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Entypo name="arrow-long-left"  color="black" top="-10" size='30' paddingLeft='15'/>
+                <Entypo name="arrow-long-left"  color="black" top="-10" size={30} paddingLeft='15'/>
             </TouchableOpacity>
             </View>
           <Text style={styles.paragraph}>

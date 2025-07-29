@@ -1,8 +1,15 @@
-import {View, Text, StyleSheet} from "react-native"
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
+import { Entypo } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 export default function HelpScreen () {
+    const navigation = useNavigation();
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.title}>Help & Support</Text>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Entypo name="arrow-long-left"  color="black" top="-30" size={30} paddingLeft='15'/>
+            </TouchableOpacity>
             <Text style={styles.text}>This app is made for students to honestly share their thoughts and experiences about universities, teachers, and study conditions. You can find and read real stories, reviews, and tips from other students—all in one place.
 
 If you have any issues or need help using the app, check our FAQ for quick answers about posting, editing your profile, or using features. If you still have questions, contact our support team. We're here to make sure you have a smooth and helpful experience.</Text>
@@ -16,7 +23,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff', 
-        padding: 20,
+        paddingTop: 50,
     },
     title: {
         fontSize: 28,

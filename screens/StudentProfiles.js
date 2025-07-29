@@ -5,12 +5,13 @@ import { useNavigation } from '@react-navigation/native';
 import { Entypo } from '@expo/vector-icons';
 
 const photosURI = [
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
-    require("../assets/queens-university-belfast-adobestock-525837958.jpg"),
+  require("../assets/photouni1.png"),
+  require("../assets/photouni2.png"),
+  require("../assets/photouni3.png"),
+  require("../assets/photouni4.png"),
+  require("../assets/photouni5.png"),
+  require("../assets/photouni6.png"),
+ 
 ]
 
 export function PhotoGrid({ photos }) {
@@ -43,7 +44,7 @@ export default function ProfileScreen() {
             <Image style={styles.logo} source={require('../assets/logo-image.png')} />
          </View>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Entypo name="arrow-long-left"  color="black" top="-10" size='30' marginRight='300'/>
+            <Entypo name="arrow-long-left"  color="black" top="-10" size={30} marginRight='300'/>
         </TouchableOpacity>
       <Image style={{ borderColor: '#671414', borderWidth: 5, width: 120, height: 120, borderRadius: 60, margin: 20 }} source={require("../assets/profile.jpg")} />
       <Text style={styles.text1}> Name </Text>

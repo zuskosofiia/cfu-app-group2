@@ -5,15 +5,16 @@ import { Entypo } from '@expo/vector-icons';
 
 
 const photosURI = [
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
-  require("../assets/profile.jpg"),
+ { name: "Diana", photo: require("../assets/dianka.jpg")},
+  {name: "Denis", photo: require("../assets/denis.jpg")},
+  {name: "Anna", photo: require("../assets/anna.jpg")},
+  {name: "Maria", photo: require("../assets/bohachenko.jpg")},
+  {name: "Bohdan", photo: require("../assets/bohdan.jpg")},
+  {name: "Ostap", photo: require("../assets/ostap.jpg")},
+ { name: "Maria", photo: require("../assets/halyshko.jpg")},
+  {name: "Sofiia", photo: require("../assets/sofiia.jpg")},
+  {name: "Lika", photo: require("../assets/lika.jpg")},
+ { name: "Rostik", photo:require("../assets/rostik.jpg")},
 ]
 
 export function PhotoGrid({students}) {
@@ -25,9 +26,9 @@ export function PhotoGrid({students}) {
       ({item}) => (
         <TouchableOpacity  onPress ={() => navigation.navigate("StudentProfiles")} >
             <View style={styles.studentBox}>
-                <Image source={item} style={styles.image} />
+                <Image source={item.photo} style={styles.image} />
                 <View style={styles.studentInfo}>
-                    <Text style = {{textAlign: 'center'}}>Info</Text>
+                    <Text style = {{textAlign: 'center'}}>{item.name}</Text>
                 </View>
             
             </View>
@@ -42,13 +43,14 @@ export function PhotoGrid({students}) {
 
  
 export default function StudentsScreen() {
+    const navigation = useNavigation()
   return (
-    <ScrollView>
+    <ScrollView style={styles.mainContainer}>
         <View style={styles.container}>
             <Text style={styles.maintext}> Students </Text>
         </View>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Entypo name="arrow-long-left"  color="black" top="-10" size='30' paddingLeft='15'/>
+          <Entypo name="arrow-long-left"  color="black" top="-10" size={30} paddingLeft='15'/>
         </TouchableOpacity>
         <View style={styles.imagesContainer}>
                 <PhotoGrid students={photosURI}></PhotoGrid>
@@ -61,9 +63,12 @@ export default function StudentsScreen() {
 
 }
 const styles = StyleSheet.create({
+  maincontainer: {
+    backgroundColor: '#fff',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: "space-between",
     

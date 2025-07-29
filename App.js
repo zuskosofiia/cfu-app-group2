@@ -25,10 +25,12 @@ import StudentProfiles from "./screens/StudentProfiles.js";
 const Stack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
 
+
 function MainTabs() {
   return (
       <Tabs.Navigator screenOptions={({ route }) => ({
         headerShown: false,
+        // tabBarShowLabel: false, //I change this
         tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import {useRoute} from '@react-navigation/native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { useRoute } from '@react-navigation/native';
 import { Entypo } from '@expo/vector-icons';
 
 export default function InformationScreen() {
@@ -9,45 +9,67 @@ export default function InformationScreen() {
     const uniInstance = route.params.uni
 
     return (
-    <ScrollView>
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../assets/logo-image.png')} />
             <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Entypo name="arrow-long-left"  color="black" top="-10" size='30' paddingLeft='15'/>
+                <Entypo name="arrow-long-left" color="black" top="40" size={30} paddingRight='270' />
             </TouchableOpacity>
-        <View style={styles.textcon}>
-            <Text style={styles.textinfo}>{uniInstance.uniInformation}</Text>
+
+            <Image style={styles.photos} source={uniInstance.uniURI} />
+            <ScrollView style={styles.textcon}>
+                <Text style={styles.heading}>{uniInstance.uniName}</Text>
+                <Text style={styles.textinfo}>{uniInstance.uniInformation}</Text>
+            </ScrollView>
         </View>
-        </View>
-    </ScrollView> 
     )
 }
 const styles = StyleSheet.create({
     container: {
-        marginTop: '15%',
-        margin: '5%',
         backgroundColor: '#fff',
         height: '100%',
+        padding: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     textcon: {
-        marginTop: '50%',
+        marginTop: '10%',
+        flex: 1
     },
+    heading: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#3A6B35',
+        textAlign: 'center',
+        marginBottom: 15,
+    },
+
     textinfo: {
-    color: 'black',
-    fontSize: 19,
-    fontWeight: 'bold',
-    alignSelf: 'center',
-    justifyContent: 'center',
+        fontSize: 16,
+        lineHeight: 24,
+        marginBottom: 12,
+        color: '#333',
+
     },
-logo: {
-    width: 75,
-    height: 75,
-    resizeMode: 'contain',
-    position: 'absolute',
-    top: -40,
-    right: 10, 
-    // marginBottom: 80,
-    // marginLeft:300,
-    
-  },
+    logo: {
+        width: 75,
+        height: 75,
+        marginTop: '10%',
+        resizeMode: 'contain',
+        position: 'absolute',
+        top: -40,
+        right: 10,
+        // marginBottom: 80,
+        // marginLeft:300,
+
+    },
+    photos: {
+        height: '20%',
+        width: '100%',
+        marginTop: '20%',
+        margin: '3%',
+
+    },
+    uniInformation: {
+        flex: 1
+    }
 })

@@ -1,4 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
+import { Entypo } from '@expo/vector-icons';
 import { StyleSheet, Text, View, Image, ScrollView, FlatList, TextInput, TouchableOpacity } from 'react-native';
 import {useState} from 'react';
 
@@ -54,6 +55,9 @@ export default function FeedbackScreen() {
                 <ScrollView>
                         <View style={styles.container}>
                             <Image style={{resizeMode:"contain", height:75, width:75, position: 'absolute', right: 0,}} source={require("../assets/logo-image.png")} />
+                             <TouchableOpacity onPress={() => navigation.goBack()}>
+                                <Entypo name="arrow-long-left"  color="black" top="20" size={30} marginRight="300"/>
+                            </TouchableOpacity>
                             <Text style={styles.maintext}>FeedBack</Text>
                         </View>
                         <TextInput

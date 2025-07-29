@@ -18,7 +18,7 @@ export default function SettingsScreen({ navigation }) {
         <SafeAreaView style={styles.container}>
             <View style={styles.topBar}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <Entypo name="arrow-long-left" size={24} color="black" paddingTop="25" />
+                    <Entypo name="arrow-long-left" size={30} color="black" paddingTop="25" />
                 </TouchableOpacity>
                 <Text style={styles.title}>Settings</Text>
             </View>
